@@ -65,6 +65,14 @@ contract Vault is ERC20 {
         emit Withdrawn(msg.sender, amountToWithdraw, tokenAmount);
     }
 
+    // View current price
+    function price() external view returns (uint256) {
+        uint256 totalAmount = dai.balanceOf(address(this));
+        
+        // Amplifying the price
+        return totalAmount * 1e18 / totalSupply();
+    }
+
     // Mint accumulated token
     function _mintReward() internal {         
         // Calculate the amount of Dai
