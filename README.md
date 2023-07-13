@@ -1,6 +1,6 @@
 # Vault
 
-```shell
+```
 Develop yield farming smart contract.
 
 Flow.
